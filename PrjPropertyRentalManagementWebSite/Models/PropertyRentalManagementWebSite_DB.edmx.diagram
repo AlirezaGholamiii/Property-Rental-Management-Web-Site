@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2f9c1162945043a4b64da30337399332" Name="Diagram1">
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Adminstrator" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Apartment" Width="1.5" PointX="5.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Appointment" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Building" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Manager" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Message" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Owner" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Role" Width="1.5" PointX="5.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Schedule" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.Tenent" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.UserRoleMapping" Width="1.5" PointX="8" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PropertyRentalManagementWebSiteDBModel.User" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Adminstrator_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Apartment_Building" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Apartment_Manager" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Apartment_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Apartment_Tenent" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Appointments_Manager" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Appointments_Schedules" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Building_Manager" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Building_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Manager_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Owner_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_UserRoleMappings_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_Tenent_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="PropertyRentalManagementWebSiteDBModel.FK_UserRoleMappings_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

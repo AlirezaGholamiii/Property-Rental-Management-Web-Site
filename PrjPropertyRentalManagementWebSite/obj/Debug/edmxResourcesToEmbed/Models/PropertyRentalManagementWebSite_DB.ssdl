@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PropertyRentalManagementWebSiteDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Adminstrator">
+    <Key>
+      <PropertyRef Name="AdminstratorID" />
+    </Key>
+    <Property Name="AdminstratorID" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirstName" Type="nchar" MaxLength="20" />
+    <Property Name="LastName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="30" />
+    <Property Name="UserName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Apartment">
+    <Key>
+      <PropertyRef Name="ApartmentID" />
+    </Key>
+    <Property Name="ApartmentID" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="BuildingID" Type="nchar" MaxLength="20" />
+    <Property Name="OwnerID" Type="nchar" MaxLength="20" />
+    <Property Name="ManagerID" Type="nchar" MaxLength="20" />
+    <Property Name="TenentID" Type="nchar" MaxLength="20" />
+    <Property Name="AoartmentNumber" Type="nchar" MaxLength="20" />
+    <Property Name="Status" Type="nchar" MaxLength="10" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Bedrooms" Type="smallint" />
+    <Property Name="Image" Type="image" />
+  </EntityType>
+  <EntityType Name="Appointments">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="AppointmentDate" Type="date" />
+    <Property Name="Status" Type="nchar" MaxLength="10" />
+    <Property Name="ScheduleID" Type="nchar" MaxLength="20" />
+    <Property Name="ManagerID" Type="nchar" MaxLength="20" />
+    <Property Name="Username" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Building">
+    <Key>
+      <PropertyRef Name="BuildingID" />
+    </Key>
+    <Property Name="BuildingID" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Country" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="City" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="StreetNumber" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="PostalCode" Type="nchar" MaxLength="6" />
+    <Property Name="ManagerID" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="OwnerID" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="ManagerID" />
+    </Key>
+    <Property Name="ManagerID" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirsName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="30" />
+    <Property Name="PhoneNumber" Type="nchar" MaxLength="12" />
+    <Property Name="UserName" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Details" Type="nchar" MaxLength="200" Nullable="false" />
+    <Property Name="Sender" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Recever" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Owner">
+    <Key>
+      <PropertyRef Name="OwnerID" />
+    </Key>
+    <Property Name="OwnerID" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirstName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nchar" MaxLength="30" />
+    <Property Name="PhoneNumber" Type="nchar" MaxLength="12" />
+    <Property Name="UserName" Type="nchar" MaxLength="15" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="RoleName" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Schedules">
+    <Key>
+      <PropertyRef Name="ScheduleID" />
+    </Key>
+    <Property Name="ScheduleID" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="DayOfTheWeek" Type="nchar" MaxLength="10" />
+    <Property Name="StartTime" Type="time" Precision="7" />
+    <Property Name="EndTime" Type="time" Precision="7" />
+  </EntityType>
+  <EntityType Name="Tenent">
+    <Key>
+      <PropertyRef Name="TenentID" />
+    </Key>
+    <Property Name="TenentID" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="UserID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirstName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nchar" MaxLength="12" />
+    <Property Name="Messages" Type="nchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="UserRoleMappings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="RoleID" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UseName" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Role" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Adminstrator_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Adminstrator" Type="Self.Adminstrator" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Adminstrator">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apartment_Building">
+    <End Role="Building" Type="Self.Building" Multiplicity="0..1" />
+    <End Role="Apartment" Type="Self.Apartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Building">
+        <PropertyRef Name="BuildingID" />
+      </Principal>
+      <Dependent Role="Apartment">
+        <PropertyRef Name="BuildingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apartment_Manager">
+    <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+    <End Role="Apartment" Type="Self.Apartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manager">
+        <PropertyRef Name="ManagerID" />
+      </Principal>
+      <Dependent Role="Apartment">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apartment_Owner">
+    <End Role="Owner" Type="Self.Owner" Multiplicity="0..1" />
+    <End Role="Apartment" Type="Self.Apartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owner">
+        <PropertyRef Name="OwnerID" />
+      </Principal>
+      <Dependent Role="Apartment">
+        <PropertyRef Name="OwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apartment_Tenent">
+    <End Role="Tenent" Type="Self.Tenent" Multiplicity="0..1" />
+    <End Role="Apartment" Type="Self.Apartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tenent">
+        <PropertyRef Name="TenentID" />
+      </Principal>
+      <Dependent Role="Apartment">
+        <PropertyRef Name="TenentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointments_Manager">
+    <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manager">
+        <PropertyRef Name="ManagerID" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Appointments_Schedules">
+    <End Role="Schedules" Type="Self.Schedules" Multiplicity="0..1" />
+    <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedules">
+        <PropertyRef Name="ScheduleID" />
+      </Principal>
+      <Dependent Role="Appointments">
+        <PropertyRef Name="ScheduleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Building_Manager">
+    <End Role="Manager" Type="Self.Manager" Multiplicity="1" />
+    <End Role="Building" Type="Self.Building" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manager">
+        <PropertyRef Name="ManagerID" />
+      </Principal>
+      <Dependent Role="Building">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Building_Owner">
+    <End Role="Owner" Type="Self.Owner" Multiplicity="1" />
+    <End Role="Building" Type="Self.Building" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owner">
+        <PropertyRef Name="OwnerID" />
+      </Principal>
+      <Dependent Role="Building">
+        <PropertyRef Name="OwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Manager_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Manager" Type="Self.Manager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Manager">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Owner_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Owner" Type="Self.Owner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Owner">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tenent_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Tenent" Type="Self.Tenent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Tenent">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoleMappings_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="UserRoleMappings" Type="Self.UserRoleMappings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="UserRoleMappings">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoleMappings_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserRoleMappings" Type="Self.UserRoleMappings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserRoleMappings">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PropertyRentalManagementWebSiteDBModelStoreContainer">
+    <EntitySet Name="Adminstrator" EntityType="Self.Adminstrator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Apartment" EntityType="Self.Apartment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Building" EntityType="Self.Building" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manager" EntityType="Self.Manager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Owner" EntityType="Self.Owner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Schedules" EntityType="Self.Schedules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tenent" EntityType="Self.Tenent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoleMappings" EntityType="Self.UserRoleMappings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Adminstrator_Users" Association="Self.FK_Adminstrator_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Adminstrator" EntitySet="Adminstrator" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apartment_Building" Association="Self.FK_Apartment_Building">
+      <End Role="Building" EntitySet="Building" />
+      <End Role="Apartment" EntitySet="Apartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apartment_Manager" Association="Self.FK_Apartment_Manager">
+      <End Role="Manager" EntitySet="Manager" />
+      <End Role="Apartment" EntitySet="Apartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apartment_Owner" Association="Self.FK_Apartment_Owner">
+      <End Role="Owner" EntitySet="Owner" />
+      <End Role="Apartment" EntitySet="Apartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apartment_Tenent" Association="Self.FK_Apartment_Tenent">
+      <End Role="Tenent" EntitySet="Tenent" />
+      <End Role="Apartment" EntitySet="Apartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointments_Manager" Association="Self.FK_Appointments_Manager">
+      <End Role="Manager" EntitySet="Manager" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Appointments_Schedules" Association="Self.FK_Appointments_Schedules">
+      <End Role="Schedules" EntitySet="Schedules" />
+      <End Role="Appointments" EntitySet="Appointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Building_Manager" Association="Self.FK_Building_Manager">
+      <End Role="Manager" EntitySet="Manager" />
+      <End Role="Building" EntitySet="Building" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Building_Owner" Association="Self.FK_Building_Owner">
+      <End Role="Owner" EntitySet="Owner" />
+      <End Role="Building" EntitySet="Building" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Manager_Users" Association="Self.FK_Manager_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Manager" EntitySet="Manager" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Owner_Users" Association="Self.FK_Owner_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Owner" EntitySet="Owner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tenent_Users" Association="Self.FK_Tenent_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Tenent" EntitySet="Tenent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoleMappings_Roles" Association="Self.FK_UserRoleMappings_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoleMappings" EntitySet="UserRoleMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoleMappings_Users" Association="Self.FK_UserRoleMappings_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserRoleMappings" EntitySet="UserRoleMappings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

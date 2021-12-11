@@ -11,7 +11,8 @@ namespace PrjPropertyRentalManagementWebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,12 +24,26 @@ namespace PrjPropertyRentalManagementWebSite.Models
             this.Tenents = new HashSet<Tenent>();
             this.UserRoleMappings = new HashSet<UserRoleMapping>();
         }
-    
+
+        [DisplayName("User Name")]
+        [Required(ErrorMessage = "This field is required.")]
         public string UseName { get; set; }
+
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "This field is required.")]
         public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [DisplayName("Confirm Password")]
+        [Compare("Password")]
+        public string ConfirmPassword { get; set; }
         public string UserID { get; set; }
         public string Role { get; set; }
-    
+
+        public string LoginErrorMessage { get; set; }
+
+        public virtual Role Roles { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Adminstrator> Adminstrators { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

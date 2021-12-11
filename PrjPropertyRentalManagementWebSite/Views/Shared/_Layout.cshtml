@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <title>@ViewBag.Title - Property Rental Management</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <link rel="icon" href="~/Content/real-estate-estate-agent-real-estate-investing-sales-home-building-real-property-apartment-png-clipart-removebg-preview.png" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,21 +19,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Employee Portal", "Index", "Employees", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Property Rental Management", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @if (User.Identity.IsAuthenticated)
+                    @if (Session["userID"] != null)
                     {
-                        <li>@Html.ActionLink("Get Employee List", "Index", "Employees")</li>
-                        <li>@Html.ActionLink("Add Employee", "Create", "Employees")</li>
-                        <li><a>Hello - @User.Identity.Name</a></li>
-                        <li>@Html.ActionLink("Logout", "Logout", "Accounts")</li>
- }
+
+                        <li>@Html.ActionLink("New Messages", "IndividualMessages", "Messages")</li>
+                        <li></li>
+                        <li>@Html.ActionLink("Send Message", "Create", "Messages")</li>
+                        <li></li>
+                        <li>@Html.ActionLink("Appointments", "IndividualAppointment", "Appointments")</li>
+                        <li></li>
+                        <li>@Html.ActionLink("Make an appointment", "Create", "Schedules")</li>
+                        <li></li>
+                        <li><a>Hello  @Session["userName"].ToString()</a></li>
+                        <li></li>
+                        <li ><a class="btn btn-danger" href="@Url.Action("LogOut","Login")">LogOut</a></li>
+                    }
                     else
                     {
-                        <li>@Html.ActionLink("Login", "Login", "Accounts")</li>
-}
+                        <li >@Html.ActionLink("Login", "Index", "Login")</li>
+                    }
                 </ul>
             </div>
         </div>
@@ -40,10 +50,16 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+            <p>&copy; @DateTime.Now.Year - Alireza Gholmai - Property Rental Management</p>
         </footer>
     </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>

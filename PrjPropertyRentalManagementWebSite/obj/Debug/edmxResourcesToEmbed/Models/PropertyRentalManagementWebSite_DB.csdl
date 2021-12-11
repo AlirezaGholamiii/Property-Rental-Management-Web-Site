@@ -149,10 +149,10 @@
     <Key>
       <PropertyRef Name="UserID" />
     </Key>
-    <Property Name="UseName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="UserID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="Role" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="UseName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="String" MaxLength="10" Unicode="true" Nullable="false" FixedLength="true" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Adminstrators" Relationship="Self.FK_Adminstrator_Users" FromRole="Users" ToRole="Adminstrator" />
     <NavigationProperty Name="Managers" Relationship="Self.FK_Manager_Users" FromRole="Users" ToRole="Manager" />
     <NavigationProperty Name="Owners" Relationship="Self.FK_Owner_Users" FromRole="Users" ToRole="Owner" />

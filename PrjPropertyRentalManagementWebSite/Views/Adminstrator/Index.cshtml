@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "Adminstrator";
+    if (Session["userID"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<body style="height: 100%;">
+
+
+
+
+    <div style=" position: relative; text-align: center; color: white;">
+
+        <img style="width: 100%; height: 100%; border-radius:10px;" src="/Content/1edit.jpg" alt="" />
+        <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); font-size:45px; font-style:inherit">Welcome To Property Rental Management</div>
+
+    </div>
+
+
+
+    <div class="jumbotron">
+
+        @{
+            ViewBag.Title = "Adminstrator";
+            if (Session["userID"] == null)
+            {
+                Response.Redirect("~/Login/Index");
+            }
+            else
+            {
+                <h1>Welcome  @Session["userName"].ToString() </h1>
+                <h2>You are @Session["roleName"].ToString()</h2>
+            }
+        }
+
+        <p class="lead">You can select the item to make change.</p>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-push-12">
+            <h2>What Is a Real Estate Administrator?</h2>
+            <p>
+                A real estate administrator oversees the day-to-day operations of real estate offices. As a real estate administrator, your job is to interact with tenants and coordinate with property managers, ensuring that every property lives up to expectations. Duties include mostly clerical work and keeping track of important documentation for real estate agents and property managers, which means you’ll need to develop excellent communication and organizational skills to succeed. Real estate administrators generally don’t need qualifications beyond entry-level office work experience. This job may require you to have some experience with real estate, but not always, which makes it an ideal position for candidates looking to launch their career in real estate.
+            </p>
+            <p><a class="btn btn-info" href="https://www.ziprecruiter.com/Career/Real-Estate-Administrator/What-Is-How-to-Become">Learn more &raquo;</a></p>
+        </div>
+
+
+    </div>
+    <hr />
+    <div class="row">
+
+        <div class="col-md-push-12">
+            <h2>Adminstrator Accounts:</h2>
+            <table style="width:100%">
+                <tr>
+                    <th><p><a class="btn btn-primary" href="@Url.Action("ListOfAdminstrator","Adminstrator")">List of all the Adminstrators     &raquo;</a></p></th>
+                    <th><p><a class="btn btn-success" href="@Url.Action("Create","Adminstrator")">Create a new Adminstrator     &raquo;</a></p></th>
+
+                </tr>
+
+
+            </table>
+
+        </div>
+
+    </div>
+    <hr />
+    <div class="row">
+
+        <div class="col-md-push-12">
+            <h2>Manager Accounts:</h2>
+            <table style="width:100%">
+                <tr>
+                    <th><p><a class="btn btn-primary" href="@Url.Action("ListManagers","Manager")">List of all the managers &raquo;</a></p></th>
+                    <th><p><a class="btn btn-success" href="@Url.Action("Create","Manager")">Create a new manager &raquo;</a></p></th>
+
+                </tr>
+
+
+            </table>
+
+        </div>
+
+    </div>
+    <hr />
+    <div class="row">
+
+        <div class="col-md-push-12">
+            <h2>Tenant Accounts:</h2>
+            <table style="width:100%">
+                <tr>
+                    <th><p><a class="btn btn-primary" href="@Url.Action("ListOfTenent","Tenent")">List of all the tenents &raquo;</a></p></th>
+                    <th><p><a class="btn btn-success" href="@Url.Action("Create","Tenent")">Create a new tenent &raquo;</a></p></th>
+
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+    <hr />
+
+    <div class="row">
+
+        <div class="col-md-push-12">
+            <h2>Building Owners Account:</h2>
+            <table style="width:100%">
+                <tr>
+                    <th><p><a class="btn btn-primary" href="@Url.Action("ListOfOwners","Owner")">List Building Owners &raquo;</a></p></th>
+                    <th><p><a class="btn btn-success" href="@Url.Action("Create","Owner")">Create a new Owner &raquo;</a></p></th>
+
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+    <hr />
+
+    <div class="row">
+
+        <div class="col-md-push-12">
+            <h2>Buildings:</h2>
+            <table style="width:100%">
+                <tr>
+                    <th><p><a class="btn btn-primary" href="@Url.Action("Index","Buildings")">List of all the Buildings &raquo;</a></p></th>
+                    <th><p><a class="btn btn-success" href="@Url.Action("Create","Buildings")">Create a new Building &raquo;</a></p></th>
+
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+    <hr />
+    <div class="row">
+
+        <div class="col-md-push-12">
+            <h2>Apartments:</h2>
+            <table style="width:100%">
+                <tr>
+                    <th><p><a class="btn btn-primary" href="@Url.Action("Index","Apartments")">List of all the Apartments &raquo;</a></p></th>
+                    <th><p><a class="btn btn-success" href="@Url.Action("Create","Apartments")">Create a new Apartment &raquo;</a></p></th>
+
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-push-12">
+            <h2>Messages:</h2>
+            <table style="width:100%">
+                <tr>
+                    <th><p><a class="btn btn-primary" href="@Url.Action("Index","Messages")">List of all the Messages &raquo;</a></p></th>
+                    <th><p><a class="btn btn-success" href="@Url.Action("Create","Messages")">Create a new Message &raquo;</a></p></th>
+
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-push-12">
+            <h2>Appointments:</h2>
+            <table style="width:100%">
+                <tr>
+                    <th><p><a class="btn btn-primary" href="@Url.Action("Index","Appointments")">List of all  Appointments &raquo;</a></p></th>
+                    <th><p><a class="btn btn-success" href="@Url.Action("Create","Appointments")">Create a new Appointment &raquo;</a></p></th>
+
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+</body>

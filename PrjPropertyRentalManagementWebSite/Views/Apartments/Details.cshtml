@@ -1,0 +1,90 @@
+﻿@model PrjPropertyRentalManagementWebSite.Models.Apartment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Apartment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AoartmentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AoartmentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bedrooms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bedrooms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Building.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Building.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manager.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manager.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenent.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenent.UserID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ApartmentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

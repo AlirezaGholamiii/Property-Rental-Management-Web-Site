@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Manager";
+    if (Session["userID"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<div style=" position: relative; text-align: center; color: white;">
+
+    <img style="width: 100%; height: 100%; border-radius:10px;" src="~/Content/2edit.jpg" alt="" />
+    <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); font-size:45px; font-style:inherit">Welcome To Property Rental Management</div>
+
+</div>
+
+
+<div class="jumbotron">
+    <h1>Welcome  @Session["userName"].ToString() </h1>
+    <h2>You are @Session["roleName"].ToString()</h2>
+    <p class="lead">You can select the item to make change.</p>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-push-12">
+        <h2>Real Estate Manager Responsibilities:</h2>
+        <p>
+            Managing the purchase, sale, rental, or development of properties.<br />
+            Monitoring real estate income and expenditure, as well as collecting payments.<br />
+            Determining rental income and negotiating lease agreements.<br />
+            Authorizing maintenance, repair, equipment, and supply expenditure.<br />
+            Negotiating contracts with vendors, suppliers, and contractors.<br />
+            Overseeing maintenance workers, cleaning crews, contractors, and groundskeepers.<br />
+            Keeping owners informed on taxes, occupancy rates, and lease expiration dates.<br />
+            Resolving complaints from residents and tenants.<br />
+            Preparing financial statements and records.<br />
+            Reporting to real estate owners and investors on a regular basis.<br />
+        </p>
+        <p><a class="btn btn-info" href="https://www.betterteam.com/real-estate-manager-job-description">Learn more &raquo;</a></p>
+    </div>
+
+
+</div>
+
+
+
+<hr />
+<div class="row">
+
+    <div class="col-md-push-12">
+        <h2>Tenant Accounts:</h2>
+        <table style="width:100%">
+            <tr>
+                <th><p><a class="btn btn-primary" href="@Url.Action("ListOfTenent","Tenent")">List of all the tenents &raquo;</a></p></th>
+                <th><p><a class="btn btn-success" href="@Url.Action("Create","Tenent")">Create a new tenent &raquo;</a></p></th>
+
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+<hr />
+<div class="row">
+
+    <div class="col-md-push-12">
+        <h2>Building Owners Account:</h2>
+        <table style="width:100%">
+            <tr>
+                <th><p><a class="btn btn-primary" href="@Url.Action("ListOfOwners","Owner")">List  Building Owners &raquo;</a></p></th>
+                <th><p><a class="btn btn-success" href="@Url.Action("Create","Owner")">Create a new Owner &raquo;</a></p></th>
+
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+<hr />
+
+<div class="row">
+
+    <div class="col-md-push-12">
+        <h2>Buildings:</h2>
+        <table style="width:100%">
+            <tr>
+                <th><p><a class="btn btn-primary" href="@Url.Action("Index","Buildings")">List of all the Buildings &raquo;</a></p></th>
+                <th><p><a class="btn btn-success" href="@Url.Action("Create","Buildings")">Create a new Building &raquo;</a></p></th>
+
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+<hr />
+<div class="row">
+
+    <div class="col-md-push-12">
+        <h2>Apartments:</h2>
+        <table style="width:100%">
+            <tr>
+                <th><p><a class="btn btn-primary" href="@Url.Action("Index","Apartments")">List of all the Apartments &raquo;</a></p></th>
+                <th><p><a class="btn btn-success" href="@Url.Action("Create","Apartments")">Create a new Apartment &raquo;</a></p></th>
+
+            </tr>
+        </table>
+
+    </div>
+
+</div>

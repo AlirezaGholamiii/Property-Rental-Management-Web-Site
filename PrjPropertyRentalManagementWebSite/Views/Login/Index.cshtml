@@ -1,0 +1,83 @@
+﻿@model PrjPropertyRentalManagementWebSite.Models.User
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2 style="display: flex;  justify-content: center; ">Welcome To Property Rental Management WebSite</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        #login-div {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+        }
+
+        .field-validation-error {
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="display: flex; justify-content: right; "><img src="~/Content/real-estate-estate-agent-real-estate-investing-sales-home-building-real-property-apartment-png-clipart-removebg-preview.png" alt="" border=3></img></div>
+
+    <div class="form-horizontal" id="login-div">
+        @using (Html.BeginForm("Autherize", "Login", FormMethod.Post))
+        {
+            <table>
+                <tr class="form-group">
+                    <td></td>
+                    <td style="text-decoration:underline">Property Rental Management</td>
+                </tr>
+                <tr class="form-group">
+                    <td class="form-group">
+                        @Html.LabelFor(model => model.UseName)
+                    </td>
+                    <td class="form-group">
+                        @Html.EditorFor(model => model.UseName)
+                    </td>
+                </tr>
+                <tr class="form-group">
+                    <td></td>
+                    <td class="form-group">@Html.ValidationMessageFor(model => model.UseName)</td>
+                </tr>
+
+                <tr class="form-group">
+                    <td class="form-group">@Html.LabelFor(model => model.Password)</td>
+                    <td class="form-group">@Html.EditorFor(model => model.Password)</td>
+                </tr>
+                <tr class="form-group">
+                    <td></td>
+                    <td class="form-group">@Html.ValidationMessageFor(model => model.Password)</td>
+                </tr>
+                <tr class="form-group">
+                    <td colspan="2">
+                       <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label> 
+                    </td>
+                </tr>
+                <tr class="form-group">
+                    <td></td>
+                    <td class="form-group">
+                        <input class="btn btn-success" type="submit" name="name" value="Login" />
+                        <a class="btn bg-primary" href="@Url.Action("Signup","Login")">Signup</a>
+                        <input class="btn bg-info"  type="reset" name="name" value="Clear" />
+
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

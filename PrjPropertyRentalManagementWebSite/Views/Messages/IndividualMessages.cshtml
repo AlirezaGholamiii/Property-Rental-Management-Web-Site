@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PrjPropertyRentalManagementWebSite.Models.Message>
+
+@{
+    ViewBag.Title = "IndividualMessages";
+}
+
+<h2>IndividualMessages</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Details)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recever)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+    @if (ViewBag.Message != null)
+    {
+        <script>
+
+            $(document).ready(function(){
+
+            alert('@ViewBag.Message');
+
+            });
+
+        </script>
+
+    }
+
+    @if (ViewBag.Message == null)
+    {
+
+
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Details)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Recever)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MessageID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MessageID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MessageID })
+                </td>
+            </tr>
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+
+

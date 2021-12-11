@@ -1,0 +1,76 @@
+﻿@model IEnumerable<PrjPropertyRentalManagementWebSite.Models.Appointment>
+
+@{
+    ViewBag.Title = "IndividualAppointment";
+}
+
+<h2>IndividualAppointment</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AppointmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manager.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Schedule.DayOfTheWeek)
+        </th>
+        <th></th>
+    </tr>
+
+
+    @if (ViewBag.Message != null)
+    {
+        <script>
+
+            $(document).ready(function(){
+
+            alert('@ViewBag.Message');
+
+            });
+
+        </script>
+
+    }
+    @if (ViewBag.Message == null)
+    {
+
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manager.UserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Schedule.DayOfTheWeek)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AppointmentID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentID })
+                </td>
+            </tr>
+        }
+    }
+
+    </table>
